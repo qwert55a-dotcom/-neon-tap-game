@@ -194,6 +194,17 @@ export default function Home() {
               <div className="grid-floor" />
               {gameState === "playing" && (
                 <button
+                  type="button"
+                  className="restart-button"
+                  onPointerDown={(event) => event.stopPropagation()}
+                  onClick={start}
+                  aria-label="現在のプレイをリセットしてやり直す"
+                >
+                  <span aria-hidden="true">↻</span> やり直す
+                </button>
+              )}
+              {gameState === "playing" && (
+                <button
                   key={pop}
                   className="target"
                   style={{
